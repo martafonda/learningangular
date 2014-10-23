@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="store">
 <head>
 	<meta charset="UTF-8">
 	<title>AngularJS Project</title>
@@ -8,5 +8,10 @@
 <body>
 	<script type="text/javascript" src="angular.min.js"></script>
 	<script type="text/javascript" src="app.js"></script>
+	<div ng-controller="StoreController as store">
+		<h1>Product Name: {{store.product.name}}</h1>
+		<h2>Product Price: $ {{store.product.price}}</h2>
+		<p>Product Description: {{store.product.description}}</p>
+	</div>
 </body>
 </html>
