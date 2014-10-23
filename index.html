@@ -16,14 +16,33 @@
 			<li class="list-group-item row">
 				<h3>{{product.name}}</h3>
 				<em class="pull-right">{{product.price | currency }}</em>
-				<p>{{product.description}}</p>
 				<image ng-src="{{product.images.full}}" class="img-responsive"></image></br>
 				<ul class="list-inline">
 					<li ng-repeat="thumb in product.images.thumbs" class="list-inline-item"><image class="img-thumbnail" ng-src="{{thumb}}"></image></li>
-				</ul>
+				</ul></br>
+				<section ng-controller="PanelController as panel">
+					<ul class="nav nav-pills">
+						<li ng-class="{ active: panel.isSelected(1) }"><a href="" ng-click="panel.selectTab(1)">Descriptions</a></li>
+						<li ng-class="{ active: panel.isSelected(2) }"><a href="" ng-click="panel.selectTab(2)">Specifications</a></li>
+						<li ng-class="{ active: panel.isSelected(3) }"><a href="" ng-click="panel.selectTab(3)">Reviews</a></li>
+					</ul>
+					<div class="panel" ng-show="panel.isSelected(1)">
+						<h4>Description</h4>
+						<p>{{product.description}}</p>
+					</div>
+					<div class="panel" ng-show="panel.isSelected(2)">
+						<h4>Specification</h4>
+						<p>Not yet</p>
+					</div>
+					<div class="panel" ng-show="panel.isSelected(3)">
+						<h4>Reviews</h4>
+						<p>Not yet</p>
+					</div>
+				</section>
 				<button ng-show="product.canPurchase" class="btn btn-warning pull-right col-md-"> Add to cart</button>	
 			</li>
 		</ul>
+
 	</div>
 </body>
 </html>
