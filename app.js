@@ -9,7 +9,9 @@ app.controller('StoreController', function(){
 var gem = {
 	name: "Dodecadron",
 	price: 2.95,
-	description: "This is the best gem ever."
+	description: "This is the best gem ever.",
+	canPurchase: false,
+	soldOut: false
 }
 
 })();

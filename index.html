@@ -8,10 +8,11 @@
 <body>
 	<script type="text/javascript" src="angular.min.js"></script>
 	<script type="text/javascript" src="app.js"></script>
-	<div ng-controller="StoreController as store">
+	<div ng-controller="StoreController as store" ng-hide="store.product.soldOut">
 		<h1>Product Name: {{store.product.name}}</h1>
 		<h2>Product Price: $ {{store.product.price}}</h2>
 		<p>Product Description: {{store.product.description}}</p>
+		<button ng-show="store.product.canPurchase"> Add to cart</button>
 	</div>
 </body>
 </html>
