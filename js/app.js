@@ -12,8 +12,8 @@ var gems = [
 		price: 2.95,
 		description: "This is the best gem ever.",
 		images:{
-			full: "dodecahedrongem.jpg",
-			thumbs: ["gem3.png", "gem5.png"]
+			full: "images/dodecahedrongem.jpg",
+			thumbs: ["images/gem3.png", "images/gem5.png"]
 		},
 		canPurchase: true,
 		soldOut: false
@@ -23,8 +23,8 @@ var gems = [
 		price: 2.55,
 		description: "Or this?? I don't know!",
 		images:{
-			full: "pentagonalgem.jpg",
-			thumbs:["gem1.png", "gem4.png"]
+			full: "images/pentagonalgem.jpg",
+			thumbs:["images/gem1.png", "images/gem4.png"]
 		},	
 		canPurchase: true,
 		soldOut: false
