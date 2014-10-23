@@ -5,20 +5,14 @@
 	<title>AngularJS Project</title>
 	<link rel="stylesheet" type="text/css" href="bootstrap.min.css"/>
 </head>
-<body>
+<body ng-controller="StoreController as store">
 	<script type="text/javascript" src="angular.min.js"></script>
 	<script type="text/javascript" src="app.js"></script>
-	<div ng-controller="StoreController as store" ng-hide="store.products[0].soldOut">
-		<h1>Product Name: {{store.products[0].name}}</h1>
-		<h2>Product Price: $ {{store.products[0].price}}</h2>
-		<p>Product Description: {{store.products[0].description}}</p>
-		<button ng-show="store.products[0].canPurchase"> Add to cart</button>
-	</div>
-	<div ng-controller="StoreController as store" ng-hide="store.products[0].soldOut">
-		<h1>Product Name: {{store.products[1].name}}</h1>
-		<h2>Product Price: $ {{store.products[1].price}}</h2>
-		<p>Product Description: {{store.products[1].description}}</p>
-		<button ng-show="store.products[1].canPurchase"> Add to cart</button>
+	<div ng-repeat="product in store.products" ng-hide="product.soldOut">
+		<h1>Product Name: {{product.name}}</h1>
+		<h2>Product Price: $ {{product.price}}</h2>
+		<p>Product Description: {{products.description}}</p>
+		<button ng-show="product.canPurchase"> Add to cart</button>
 	</div>
 </body>
 </html>
