@@ -24,6 +24,13 @@ app.controller('ReviewController', function(){
 	};
 });
 
+app.directive('productTitle', function(){
+	return{
+		restrict: 'E',
+		templateUrl: 'views/product-title.html'
+	};
+});
+
 var gems = [
 	{
 		name: "Dodecahedron",
