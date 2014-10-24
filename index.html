@@ -36,7 +36,27 @@
 					</div>
 					<div class="panel" ng-show="panel.isSelected(3)">
 						<h4>Reviews</h4>
-						<p>Not yet</p>
+						<blockquote ng-repeat="review in product.reviews"></blockquote>
+						<form name="reviewForm">
+							<blockquote>
+								<b>Stars: {{review.stars}}</b>
+								{{review.body}}
+								<cite>by: {{review.author}}</cite>
+							</blockquote>
+							<select ng-model="review.stars" class="form-control">
+								<option value="1">1 star</option>
+								<option value="2">2 stars</option>
+								<option value="3">3 stars</option>
+								<option value="4">4 stars</option>
+								<option value="5">5 stars</option>
+							</select></br>
+							<textarea ng-model="review.body" class="form-control"></textarea></br>
+							<div class="input-group">
+								<div class="input-group-addon">by</div>
+								<input type="email" ng-model="review.author" class="form-control" placeholder="Enter your email"	>
+							</div></br>
+							<input type="submit" value="Submit" class="btn btn-default">
+						</form>
 					</div>
 				</section>
 				<button ng-show="product.canPurchase" class="btn btn-warning pull-right col-md-"> Add to cart</button>	
